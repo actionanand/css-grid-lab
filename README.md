@@ -1,2 +1,1 @@
-# css-grid-lab
-CSS Grid Practice
+# CSS - Grid Lab
