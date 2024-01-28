@@ -9,6 +9,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         home: resolve(__dirname, 'home/index.html'),
         'media-query': resolve(__dirname, 'media-query/index.html'),
+        autoflow: resolve(__dirname, 'autoflow/index.html'),
       },
     },
   },
