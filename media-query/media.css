@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, [col-start] 24% [col-end]);
+  grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(3rem, 5.5rem) [row-2-end];
+  grid-template-areas: 'header footer side side'
+                       '. main side side';
+  gap: 10px;
+}
+
+.el1 {
+  background: rgba(255, 154, 72, 0.5);
+  grid-area: header;
+}
+
+.el2 {
+  background: rgba(255, 0, 0, 0.5);
+  grid-area: main;
+}
+
+.el3 {
+  background: rgba(0, 128, 0, 0.5);
+  grid-area: side;
+}
+
+.el4 {
+  background: rgba(0, 4, 255, 0.5);
+  justify-self: center;
+  align-self: center;
+  grid-area: footer;
+}
+
+@media (max-width: 40rem) {
+  .container {
+    grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(3rem, 5.5rem) [row-2-end row-3-start] 150px [row-3-end row-4-start] 100px [row-4-end];
+    grid-template-areas: 'header header header header'
+                         'side side side side'
+                         'main main main main'
+                         'footer footer footer footer';
+  }
+
+  .el4 {
+    justify-self: stretch;
+    align-self: stretch;
+  }
+}
