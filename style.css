@@ -8,10 +8,15 @@
   margin: 20px;
   display: grid;
   /* grid-template-columns: 200px 2fr 20% 1fr; */
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(4, [col-start] 25% [col-end]);
   /* grid-template-rows: 5rem minmax(3rem, 5.5rem); */
   /* rows with names */
   grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(3rem, 5.5rem) [row-2-end];
+  /* 
+    column-gap: 10px;
+    row-gap: 10px; 
+  */
+  gap: 10px;
 }
 
 .el1 {
@@ -20,15 +25,27 @@
 
 .el2 {
   background: rgba(255, 0, 0, 0.5);
+  grid-row-start: row-2-start;
+  grid-column: col-start 2 / col-end 2;
 }
 
 .el3 {
   background: rgba(0, 128, 0, 0.5);
-  grid-column-start: 3;
-  grid-column-end: 5;
+  /* 
+    grid-column-start: 3;
+    grid-column-end: 5; 
+  */
+  /* short-hand */
+  grid-column: 3 / 5;
   /* grid-row-start: 1; */
-  grid-row-start: row-1-start;
-  grid-row-end: row-2-end;
+  /* 
+    grid-row-start: row-1-start;
+    grid-row-end: row-2-end; 
+  */
+  /* short-hand */
+  grid-row: row-1-start / row-2-end;
+
+  grid-area: row-1-start / 3 / row-2-end / 5;
 }
 
 .el4 {
