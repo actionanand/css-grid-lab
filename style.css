@@ -6,6 +6,12 @@
 
 .container {
   margin: 20px;
+  display: grid;
+  /* grid-template-columns: 200px 2fr 20% 1fr; */
+  grid-template-columns: repeat(4, 25%);
+  /* grid-template-rows: 5rem minmax(3rem, 5.5rem); */
+  /* rows with names */
+  grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(3rem, 5.5rem) [row-2-end];
 }
 
 .el1 {
@@ -18,6 +24,11 @@
 
 .el3 {
   background: rgba(0, 128, 0, 0.5);
+  grid-column-start: 3;
+  grid-column-end: 5;
+  /* grid-row-start: 1; */
+  grid-row-start: row-1-start;
+  grid-row-end: row-2-end;
 }
 
 .el4 {
